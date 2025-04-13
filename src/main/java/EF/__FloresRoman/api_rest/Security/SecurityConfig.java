@@ -25,7 +25,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+                        //Rutas públicas sin autenticación (permitAll)
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/api/productos/**").permitAll()
+                        .requestMatchers("/api/clientes/**").permitAll()
+                        .requestMatchers("/api/obras/**").permitAll()
+                        .requestMatchers("/api/picking/**").permitAll()
+                        //Otras rutas necesitan autenticación JWT
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(filtroJWTAuthorization, UsernamePasswordAuthenticationFilter.class)

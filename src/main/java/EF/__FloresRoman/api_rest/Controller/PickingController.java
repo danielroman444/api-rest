@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/picking")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class PickingController {
     private final PickingService pickingService;
     // Listar todos los pickings

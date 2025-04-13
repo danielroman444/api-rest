@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/clientes")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class ClienteController {
     private final ClienteService clienteService;
     @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")

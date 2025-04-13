@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/obras")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class ObraController {
     private final ObraService obraService;
     @PreAuthorize("hasAnyRole('ADMIN', 'VENDEDOR')")

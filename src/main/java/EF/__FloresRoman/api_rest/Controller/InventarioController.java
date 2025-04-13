@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/inventario")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class InventarioController {
     private final InventarioService service;
     @PreAuthorize("hasAnyRole('ADMIN', 'FINANZA')")
