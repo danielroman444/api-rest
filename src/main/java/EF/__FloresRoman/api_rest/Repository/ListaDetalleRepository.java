@@ -6,3 +6,4 @@ import java.util.List;
 public interface ListaDetalleRepository extends JpaRepository<ListaDetalle, Long> {
     List<ListaDetalleProjection> findAllProjectedBy();
 }
+//findAllProjectedBy se usa para recuperar ciertos campos de una entidad, no el objeto completo

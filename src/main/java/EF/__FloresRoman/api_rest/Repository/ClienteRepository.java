@@ -12,3 +12,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query("SELECT c.idCliente AS id, c.nombreEmpresa AS nombreEmpresa FROM Cliente c WHERE c.idCliente = :id")
     Optional<ClienteProjection> findProjectedById(@Param("id") Long id);
 }
+//selecciona el id de la entidad cliente le da el alias id
+//selecciona el nombreEmpresa deja el mismo nombre con el alias
+//Se trabaja con la tabla cliente y busca solo el cliente cuyo id coincida con el parametro id

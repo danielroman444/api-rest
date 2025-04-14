@@ -2,8 +2,8 @@ package EF.__FloresRoman.api_rest.Dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.time.LocalDate;
-@Data
-@AllArgsConstructor
+@Data //Genera automaticamente setter, getter, toString, EqualsAndHashCode  y RequiredArgsConstructor
+@AllArgsConstructor //Genera automaticamente un constructor con todos los campos
 public class ListaDetalleDto {
     private Long idlistadetalle;
     private String nombreEmpresa;

@@ -4,3 +4,4 @@ public class ObraNotFoundException extends RuntimeException {
         super(mensaje);
     }
 }
+//un constructor de la clase padre RuntimeException con un mensaje

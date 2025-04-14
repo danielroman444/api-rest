@@ -1,6 +1,6 @@
 package EF.__FloresRoman.api_rest.Dto;
 import lombok.Data;
-@Data
+@Data //Genera automaticamente setter, getter, toString, EqualsAndHashCode  y RequiredArgsConstructor
 public class TablaListaRegistroDto {
     private Long idProduct;
     private Integer cantidad;

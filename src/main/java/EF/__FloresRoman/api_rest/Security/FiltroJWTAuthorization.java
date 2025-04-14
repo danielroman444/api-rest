@@ -15,8 +15,8 @@ import java.util.Collections;
 @Component
 @RequiredArgsConstructor
 public class FiltroJWTAuthorization extends OncePerRequestFilter {
-    private final JwtService jwtService;
-    private final DetalleUsuarioService detalleUsuarioService;
+    private final JwtService jwtService; //Inyecta JwtService
+    private final DetalleUsuarioService detalleUsuarioService; //Inyecta DetalleUsarioService
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -41,3 +41,12 @@ public class FiltroJWTAuthorization extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+// recibe 3 parametros request, response y filterChain (cadena de filtros) y luego cuyo filtro obtiene encabezado Autorization que tiene el Token jwt.
+// verifica que el encabezado Autorization exista y comienza con bearer, Si el encabezado es valido, el token jwt se extrae eliminando el prefijo bearer (son de 7 caracteres)
+// jwtService se utiliza para validar si el token es valido, el flujo continua
+// Luego extrae informacion del toke: username y rol
+// se crea un User con los detalles del usuario autenticado
+//Se crea un objeto de autenticacion UsernamePasswordAuthenticationToken usando el usuario creado
+//Se agregan de autenticacion como la IP de la solicitud.
+//Se establece el objeto authToken en el SecurityContex, hasta aqui ya el usuario esta autenticado y esta autorizado para las solicitudes
+//Se pasa la solicitud a la cadena de filtros de spring security.
