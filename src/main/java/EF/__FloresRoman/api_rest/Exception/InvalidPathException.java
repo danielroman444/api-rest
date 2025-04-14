@@ -4,3 +4,4 @@ public class InvalidPathException extends RuntimeException {
         super("No se encontró el cliente con ID: " + idcliente);
     }
 }
+//un constructor de la clase padre RuntimeException con un mensaje personalizado

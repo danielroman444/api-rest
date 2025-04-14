@@ -1,8 +1,8 @@
 package EF.__FloresRoman.api_rest.Dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-@Data
-@AllArgsConstructor
+@Data //Genera automaticamente setter, getter, toString, EqualsAndHashCode  y RequiredArgsConstructor
+@AllArgsConstructor //Genera automaticamente un constructor con todos los campos
 public class TablaListaDto {
     private Long idtablalista;
     private Long idProduct;

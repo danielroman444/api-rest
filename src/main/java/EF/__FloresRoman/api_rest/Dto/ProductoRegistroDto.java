@@ -2,7 +2,7 @@ package EF.__FloresRoman.api_rest.Dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-@Data
+@Data //Genera automaticamente setter, getter, toString, EqualsAndHashCode  y RequiredArgsConstructor
 public class ProductoRegistroDto {
     @NotBlank(message = "El código es obligatorio")
     private String codigo;

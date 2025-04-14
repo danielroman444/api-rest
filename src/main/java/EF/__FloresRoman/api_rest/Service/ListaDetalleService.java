@@ -85,6 +85,14 @@ public class ListaDetalleService {
         );
         return new GenericResponseDto("Detalle actualizado correctamente", true, responseDto);
     }
+    //Busca un valor por su ID, si no lo encuentra lanza una excepcion ResourceNotFoundException
+    //Busca el objeto TablaLista con el ID recibido desde el DTO.
+    //Si no existe, lanza una excepción de JPA (EntityNotFoundException).
+    //Luego actualiza los campos
+    //El costoTotal se calcula multiplicando el costo unitario por la cantidad definida en TablaLista.
+    //Se guarda el objeto actualizado en la base de datos.
+    //Se crea un DTO para devolver solo los datos necesarios, evitando devolver la entidad completa.
+    //Devuelve un mensaje de éxito, un booleano (true) indicando que todo salio bien y el DTO con los datos actualizados.
     public void eliminarDetalle(Long id) {
         ListaDetalle detalle = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Detalle no encontrado con ID: " + id));

@@ -4,10 +4,9 @@ import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data //Genera automaticamente setter, getter, toString, EqualsAndHashCode  y RequiredArgsConstructor
+@NoArgsConstructor //genera automaticamente un constructor sin argumentos
+@AllArgsConstructor //Genera automaticamente un constructor con todos los campos
 public class PickingRegistroDto{
     @NotBlank(message = "El estado no puede estar vacío")
     @Pattern(

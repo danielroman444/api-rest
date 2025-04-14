@@ -37,12 +37,19 @@ public class SecurityConfig {
                 .addFilterBefore(filtroJWTAuthorization, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
-    @Bean
+    //csrf().disable() desactiva proteccion CSRF
+    //sessionManagement indica que no se usan sesiones
+    //requestMatchers define rutas publicas
+    //anyRequest().authenticated() todas las demas rutas requieren token
+    //addFilterBefore añade filtro JWT para validar el tokem
+    @Bean //para que gestione esta instancia y usarla en cualquier parte
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    @Bean
+    //Sirve para codificar contraseñas antes de guardarlas en la base de datos y compararlas al momento el login
+    @Bean //para que gestione esta instancia y usarla en cualquier parte
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
+    //Permite usar el AuthenticationManager para controlar el inicio de sesion sin depender del formulario.
 }

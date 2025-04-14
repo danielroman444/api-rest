@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-@AllArgsConstructor
+@AllArgsConstructor //Genera automaticamente un constructor con todos los campos
 public class UsuarioSeguridadDto {
     private String username;
     private String rol;

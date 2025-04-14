@@ -4,3 +4,4 @@ public class ResourceNotFoundException extends RuntimeException {
         super(mensaje);
     }
 }
+//un constructor de la clase padre RuntimeException con un mensaje personalizado
